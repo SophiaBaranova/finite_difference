@@ -15,11 +15,11 @@ $$\begin{cases}
 
 $$\begin{cases}
    \frac{y_{i+1}-2y_{i}+y_{i-1}}{h^2}+p_{i}\frac{y_{i+1}-y_{i-1}}{2h}+q_{i}y_{i}=f_{i}\\
-   \alpha_{0}y(x_0)+\alpha_{1}y'(x_0)=A\\
+   \alpha_{0}y(x_0)+\alpha_{1}y'(x_0)=A & \quad(1)\\
    \beta_{0}y(x_n)+\beta_{1}y'(x_n)=B
 \end{cases}$$
 
-## Double sweep method for solving the system (2)
+## Double sweep method for solving the system (1)
 1. Write the system in the tri-diagonal form
 2. Calculate double sweep coefficients
 3. Find unknown $y_{i}$ in the reverse order
