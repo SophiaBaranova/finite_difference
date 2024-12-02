@@ -15,7 +15,7 @@ int main()
 	double x0, xn; //start and end points of the interval
 	float A[3], B[3]; //coefficients in boundary condition equations
 	double h, e = 1.; //length of subintervals and accuracy
-    double r2 = 10., r1, delta; //calculation errors
+	double r2 = 10., r1, delta; //calculation errors
 	int i, n, e_out, iter = 0; //counters
 	double *x1 = NULL, *y1 = NULL, *x2 = NULL, *y2 = NULL;
 	FILE *p = NULL;
@@ -59,11 +59,11 @@ int main()
 		fscanf(p, "%lf%lf", &x0, &xn);
 		fclose(p);
 	}
-    else
-    {
+	else
+	{
 		printf("invalid answer\n");
-        return -1;
-    }
+		return -1;
+	}
 	//print boundary condition
 	printf("\nboundary condition:\n");
 	yellow();
@@ -118,7 +118,7 @@ int main()
 	//while the desired accuracy isn't reached
 	while (1)
 	{
-        iter++;
+		iter++;
 		x1 = x2;
 		y1 = y2;
 		r1 = r2;
@@ -156,17 +156,17 @@ int main()
 		 	break;
 		}
 		//if calculation error is greater than desired accuracy
-        if (r2 > e)
-        {
-            free(x1);
-            free(y1);
-            continue;
-        }
+        	if (r2 > e)
+        	{
+            	free(x1);
+            	free(y1);
+            	continue;
+        	}
 		//if the desired accuracy is reached
-        else
-        {
-            break;
-        }
+        	else
+        	{
+            	break;
+        	}
 	}
 	//if the desired accuracy wasn't reached
 	if (stop)
@@ -187,7 +187,7 @@ int main()
 	yellow();
 	printf("\ncalculation error (using Runge's rule): %.4le\n", r2);
 	printf("number of iterations: %d\n", iter);
-    printf("number of subintervals: %d\n", n / 2);
+	printf("number of subintervals: %d\n", n / 2);
 	reset();
 	//free the memory
 	free(x1);
